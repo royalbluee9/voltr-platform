@@ -1,0 +1,25 @@
+src/3d/objects/index.tsx(5,10): error TS1484: 'Instrument' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/3d/scenes/StarfieldBackground.tsx(42,10): error TS2741: Property 'args' is missing in type '{ attach: string; count: number; array: Float32Array<ArrayBuffer>; itemSize: number; }' but required in type 'Mutable<Overwrite<Partial<Overwrite<BufferAttribute<BufferAttributeEventMap>, MathProps<BufferAttribute<BufferAttributeEventMap>> & ReactProps<...>>>, Omit<...>>>'.
+src/3d/scenes/StarfieldBackground.tsx(43,10): error TS2741: Property 'args' is missing in type '{ attach: string; count: number; array: Float32Array<ArrayBuffer>; itemSize: number; }' but required in type 'Mutable<Overwrite<Partial<Overwrite<BufferAttribute<BufferAttributeEventMap>, MathProps<BufferAttribute<BufferAttributeEventMap>> & ReactProps<...>>>, Omit<...>>>'.
+src/3d/scenes/TradingFloorScene.tsx(85,25): error TS2322: Type '{ children: Element[]; disableNormalPass: true; }' is not assignable to type 'IntrinsicAttributes & EffectComposerProps & RefAttributes<EffectComposer>'.
+  Property 'disableNormalPass' does not exist on type 'IntrinsicAttributes & EffectComposerProps & RefAttributes<EffectComposer>'. Did you mean 'enableNormalPass'?
+src/components/market/Watchlist/Watchlist.tsx(4,10): error TS1484: 'Instrument' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/trading/OrderBook/OrderBook.tsx(2,10): error TS2724: '"react-virtual"' has no exported member named 'useVirtualizer'. Did you mean 'useVirtual'?
+src/components/trading/OrderBook/OrderBook.tsx(6,1): error TS6133: 'OrderLevel' is declared but its value is never read.
+src/components/trading/OrderBook/OrderBook.tsx(6,10): error TS1484: 'OrderLevel' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/trading/OrderBook/OrderBook.tsx(76,50): error TS7006: Parameter 'virtualRow' implicitly has an 'any' type.
+src/hooks/useWebSocket.ts(2,24): error TS2307: Cannot find module '../../services/websocket/MockWebSocket' or its corresponding type declarations.
+src/layouts/GridMapLayout.tsx(3,38): error TS6133: 'Instance' is declared but its value is never read.
+src/layouts/GridMapLayout.tsx(3,48): error TS6133: 'Instances' is declared but its value is never read.
+src/layouts/TradingLayout.tsx(39,59): error TS2322: Type '"neutral"' is not assignable to type '"plasma" | "solar" | "gas" | "carbon" | "nuclear" | "buy" | "sell" | undefined'.
+src/services/websocket/MockWebSocket.ts(2,10): error TS1484: 'Instrument' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/websocket/MockWebSocket.ts(2,22): error TS1484: 'OrderBook' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/websocket/MockWebSocket.ts(2,33): error TS1484: 'PriceTick' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/services/websocket/MockWebSocket.ts(5,22): error TS2503: Cannot find namespace 'NodeJS'.
+src/store/marketStore.ts(2,10): error TS1484: 'Instrument' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/marketStore.ts(2,22): error TS1484: 'PriceTick' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/marketStore.ts(2,33): error TS1484: 'OrderBook' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/marketStore.ts(2,44): error TS1484: 'Trade' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/tradingStore.ts(2,10): error TS1484: 'Order' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/tradingStore.ts(2,17): error TS1484: 'Position' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/store/uiStore.ts(3,13): error TS1294: This syntax is not allowed when 'erasableSyntaxOnly' is enabled.

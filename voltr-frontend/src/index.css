@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Palette — Deep Space Dark */
+  --bg-void:        #010409;   /* Near-black space background */
+  --bg-surface:     #0d1117;   /* Panel surfaces */
+  --bg-elevated:    #161b22;   /* Elevated cards */
+  --bg-overlay:     #21262d;   /* Modals, tooltips */
+
+  /* Energy Accent Colors */
+  --energy-plasma:  #00f5ff;   /* Primary cyan — electricity */
+  --energy-solar:   #ffd700;   /* Solar/renewable yellow */
+  --energy-gas:     #ff6b35;   /* Natural gas orange */
+  --energy-carbon:  #39ff14;   /* Carbon credits neon green */
+  --energy-nuclear: #bf5fff;   /* Nuclear purple */
+
+  /* Trading State Colors */
+  --trade-buy:      #00e676;   /* Buy / long / positive */
+  --trade-sell:     #ff1744;   /* Sell / short / negative */
+  --trade-neutral:  #78909c;   /* Neutral / flat */
+
+  /* Typography */
+  --text-primary:   #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted:     #484f58;
+
+  /* Glow Effects */
+  --glow-plasma:    0 0 20px rgba(0, 245, 255, 0.6);
+  --glow-buy:       0 0 15px rgba(0, 230, 118, 0.5);
+  --glow-sell:      0 0 15px rgba(255, 23, 68, 0.5);
+  --glow-solar:     0 0 20px rgba(255, 215, 0, 0.4);
+
+  /* Fonts */
+  --font-display: 'Orbitron', monospace;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-ui:      'Space Grotesk', sans-serif;
+}
+
+body {
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Base custom classes ported from the initial HTML prototype */
+.holo-panel {
+  background: rgba(13, 17, 23, 0.9);
+  border: 1px solid rgba(0, 245, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--energy-plasma), transparent);
+  opacity: 0.6;
+}
+
+.holo-panel.buy::before {
+  background: linear-gradient(90deg, transparent, var(--trade-buy), transparent);
+}
+
+.holo-panel.sell::before {
+  background: linear-gradient(90deg, transparent, var(--trade-sell), transparent);
+}
+
+.holo-panel.solar::before {
+  background: linear-gradient(90deg, transparent, var(--energy-solar), transparent);
+}

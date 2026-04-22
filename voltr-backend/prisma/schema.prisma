@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Instrument {
+  id         String   @id @default(uuid())
+  symbol     String   @unique
+  name       String
+  type       String   // SPOT, FUTURES, OPTIONS, CERTIFICATE
+  energyType String   // ELECTRICITY, GAS, SOLAR, WIND, CARBON, NUCLEAR
+  currency   String
+  color      String
+  
+  orders     Order[]
+  trades     Trade[]
+}
+
+model Order {
+  id            String   @id @default(uuid())
+  instrumentId  String
+  side          String   // BUY, SELL
+  type          String   // MARKET, LIMIT, STOP
+  quantity      Float
+  price         Float?
+  status        String   // PENDING, OPEN, FILLED, CANCELLED
+  filledQty     Float    @default(0)
+  timestamp     DateTime @default(now())
+
+  instrument    Instrument @relation(fields: [instrumentId], references: [id])
+}
+
+model Trade {
+  id           String   @id @default(uuid())
+  instrumentId String
+  price        Float
+  quantity     Float
+  side         String   // BUY, SELL
+  timestamp    DateTime @default(now())
+
+  instrument   Instrument @relation(fields: [instrumentId], references: [id])
+}

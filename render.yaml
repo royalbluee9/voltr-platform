@@ -1,0 +1,27 @@
+services:
+  # Python ML Microservice
+  - type: web
+    name: voltr-ml
+    env: python
+    rootDir: voltr-ml
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # Node.js + Prisma API Gateway
+  - type: web
+    name: voltr-backend
+    env: node
+    rootDir: voltr-backend
+    buildCommand: "npm install && npx prisma db push && npx prisma db seed && npm run build"
+    startCommand: "npm run start"
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    # Provide persistent disk for the local Prisma SQLite DB
+    disk:
+      name: voltr-sqlite3
+      mountPath: /opt/render/project/src/voltr-backend/prisma
+      sizeGB: 1
